@@ -134,3 +134,7 @@ Adicione uma peça ao carrinho e aumente a quantidade.
 Abra o checkout, deixe um campo vazio e veja a mensagem de erro. Preencha tudo e confirme.
 Alterne entre o modo claro e o escuro.
 Abra no celular ou reduza a janela para ver o layout responsivo.
+
+
+## Acesso ao site:
+https://arodrigues23.github.io/Site_Loja/
