@@ -1,8 +1,4 @@
-/* VAZIO — paleta da marca:
-   Fundo principal: preto absoluto fosco #0a0a0a | Fundo secundário: grafite profundo #1b1c1e
-   Texto primário: branco gelo #eef2f3 | Texto secundário: cinza metálico #9aa0a6
-   Destaque: verde ácido #b6ff1f (alternativa cromo: #c9ced3)
-   LAYOUT: barra fixa, carrossel em faixa total, catálogo com filtros à esquerda, carrinho em gaveta, sobre no rodapé. */
+
 :root{color-scheme:dark;
   --bg:#0a0a0a;--ink:#eef2f3;--card:#1b1c1e;--soft:#9aa0a6;
   --line:#2e3034;--cone:#b6ff1f;--coneInk:#0a0a0a;--cobalt:#b6ff1f;--panel:#141517;
