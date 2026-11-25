@@ -37,7 +37,7 @@ function art(t,hex,cls="art"){
 }
 function foto(p,cor,cls="art"){
   const src=typeof p.img==="string"?p.img:(p.img&&p.img[cor]);
-  if(!src)return art(p.t,COLORS[cor],cls); // sem foto: continua mostrando o desenho
+  if(!src)return art(p.t,COLORS[cor],cls);
   return `<img class="${cls} foto" src="${src}" alt="${esc(p.n)} na cor ${cor}" loading="lazy">`;
 }
 
@@ -165,7 +165,7 @@ play();
 
 /* catálogo e filtros */
 const CATS=["Tudo",...new Set(P.map(p=>p.c))];
-let route=null; /* categoria da página atual: Moletons, Camisetas, Calças ou null (início) */
+let route=null; 
 const curCat=()=>route||F.cat;
 const sizesFor=()=>[...new Set(P.filter(p=>curCat()==="Tudo"||p.c===curCat()).flatMap(p=>p.sz))];
 const MAXP=Math.ceil(Math.max(...P.map(p=>p.p))/10)*10;
@@ -239,7 +239,7 @@ function applyRoute(){
   const h=location.hash.slice(1);
   route=ROUTES[h]||null;
   if(route)F.cat=route;
-  else if(lastRoute)F.cat="Tudo"; /* ao sair de uma categoria, o catálogo completo volta */
+  else if(lastRoute)F.cat="Tudo"; 
   lastRoute=route;
   document.body.classList.toggle("catpage",!!route);
   $("#crumb").hidden=!route;
