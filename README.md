@@ -73,37 +73,58 @@ Os produtos ficam na lista `P` no início do `script.js`:
 ```
 
 Campo	O que faz
+
 `id`	Número único do produto
+
 `n`	Nome
+
 `c`	Categoria: `Moletons`, `Camisetas` ou `Calças`
+
 `p`	Preço em reais
+
 `col`	Cores disponíveis. Cada nome precisa existir em `COLORS`
+
 `img`	Foto de cada cor, com o caminho dentro de `img/`
+
 `sz`	Tamanhos disponíveis
+
 `top`	De 1 a 4 aparece no carrossel. Sem `top` ≤ 4, não aparece
+
 `d`	Descrição usada no carrossel
+
 `t`	Desenho de reserva: `hoodie`, `tee`, `pants` ou `zip`
+
 Cores disponíveis
 A lista `COLORS` no início do `script.js` define o nome e o hex de cada cor. Para usar uma nova cor, adicione-a a `COLORS` e depois aos produtos.
 Trocar as cores do site
 Edite as variáveis no início do `style.css`, dentro de `:root` (modo escuro) e `:root[data-theme=light]` (modo claro).
 Alterar o frete grátis ou o frete padrão
 Valor mínimo para frete grátis: constante `FREE` no `script.js` (atualmente `399`).
+
 Valor do frete abaixo do mínimo: `29.9` na função `renderCheckout`.
+
 ---
 ## 4. Pontos de atenção
 Fotos: a pasta `img/` não vem neste pacote. Se um arquivo não existir, a imagem aparece quebrada.
+
 Caminho da Camiseta Vácuo: a cor Verde aponta para `basica_verde.jpeg`, sem a pasta `img/`. Se a foto não aparecer, troque para `img/basica_verde.jpeg`.
+
 Carrinho e filtros: ficam só no navegador de quem está usando. Limpar os dados do navegador apaga o carrinho.
+
 Checkout: é uma simulação. Para vender de verdade, é preciso integrar um meio de pagamento e um servidor.
+
 ---
 ## 5. Limitações conhecidas
-
 Não há banco de dados nem área de administração. Os produtos são editados no código.
+
 Não há página de detalhes do produto.
+
 Não há cadastro de clientes nem histórico de pedidos.
+
 O controle de estoque não existe. Todos os tamanhos aparecem como disponíveis.
+
 As informações da loja (endereço, telefone, e-mail, Instagram) são fictícias.
+
 ---
 ## 6. Como testar
 Abra o `index.html` em um navegador atualizado.
