@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="VAZIO Streetwear: moletons, camisetas e calças de São Paulo, em pequenas tiragens.">
+<title>VAZIO Streetwear</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Crect width='10' height='10' fill='%230a0a0a'/%3E%3Ccircle cx='5' cy='5' r='2' fill='%23b6ff1f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="logo st" href="#topo">VAZIO<span>.</span></a>
+    <nav class="catnav" aria-label="Categorias">
+      <a href="#topo" data-route="">Início</a>
+      <a href="#moletons" data-route="moletons">Moletons</a>
+      <a href="#camisetas" data-route="camisetas">Camisetas</a>
+      <a href="#calcas" data-route="calcas">Calças</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <div class="tools">
+      <button class="iconBtn" id="theme" aria-pressed="false" aria-label="Ativar modo claro">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        <span id="themeLabel">Claro</span>
+      </button>
+      <button class="cartBtn" id="openCart">Carrinho <span class="count" id="count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero band" id="topo" aria-roledescription="carrossel" aria-label="Peças mais famosas">
+  <div class="wrap">
+    <div class="slides" id="slides"></div>
+    <div class="ctrl">
+      <button class="arr" id="prev" aria-label="Peça anterior">‹</button>
+      <div class="dots" id="dots"></div>
+      <button class="arr" id="next" aria-label="Próxima peça">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="tiles band" aria-labelledby="tilesTitle">
+  <div class="wrap">
+    <h2 class="st" id="tilesTitle">Compre por categoria</h2>
+    <div class="tileGrid" id="tiles"></div>
+  </div>
+</section>
+
+<section class="cat band" id="catalogo">
+  <div class="wrap">
+    <p class="crumb" id="crumb" hidden><a href="#topo">Início</a> / <span id="crumbCat"></span></p>
+    <h2 class="st" id="catTitle">Catálogo</h2>
+    <p class="lede" id="catLede">Busque pelo nome da peça ou use os filtros. Escolha o tamanho no card e adicione direto ao carrinho.</p>
+    <div class="search">
+      <label for="q" class="sr">Buscar peças</label>
+      <input id="q" type="search" placeholder="Buscar: moletom, cargo, oversized…" autocomplete="off">
+      <label for="sort" class="sr">Ordenar</label>
+      <select id="sort">
+        <option value="rel">Mais vendidos primeiro</option>
+        <option value="asc">Menor preço</option>
+        <option value="desc">Maior preço</option>
+        <option value="az">Nome A–Z</option>
+      </select>
+    </div>
+    <div class="layout">
+      <div class="filters" id="filters">
+        <button class="fToggle" id="fToggle" type="button" aria-expanded="true" aria-controls="fBody"><span>Filtros <span id="fcount"></span></span><span class="chev" aria-hidden="true">▾</span></button>
+        <div class="fBody" id="fBody">
+        <div class="fgroup" id="gCat"><h3>Categoria</h3><div class="chips" id="fCat"></div></div>
+        <div class="fgroup"><h3>Tamanho</h3><div class="chips" id="fSize"></div></div>
+        <div class="fgroup"><h3>Cor</h3><div class="chips" id="fColor"></div></div>
+        <div class="fgroup"><h3><label for="fPrice">Preço máximo</label></h3>
+          <input type="range" id="fPrice" min="50" max="700" step="10">
+          <div class="rangeOut"><span>R$ 50</span><output id="priceOut" for="fPrice"></output></div>
+        </div>
+        <button class="clear" id="clear">Limpar filtros</button>
+        </div>
+      </div>
+      <div>
+        <div class="meta"><span id="resCount"></span></div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="about band" id="sobre">
+  <div class="wrap">
+    <h2 class="st">Sobre a VAZIO</h2>
+    <div class="cols">
+      <div>
+        <p>A VAZIO nasceu numa banca de camisetas na Galeria do Rock, em 2017. Hoje desenhamos tudo em São Paulo e produzimos em pequenas tiragens com oficinas do Bom Retiro, em algodão pesado que aguenta lavagem e skate.</p>
+        <p>Cada coleção sai em quantidade limitada. Quando acaba, acaba.</p>
+      </div>
+      <div><h3>Loja física</h3><ul><li>Av. São João, 439 — Centro, São Paulo</li><li>Seg a sáb, 10h às 20h</li></ul></div>
+      <div><h3>Ajuda</h3><ul><li>Trocas em até 30 dias</li><li>Frete grátis acima de R$ 399</li><li>Tabela de medidas em cada peça</li></ul></div>
+      <div><h3>Contato</h3><ul><li>contato@vazio.com.br</li><li>(11) 3333-0000</li><li><a href="https://instagram.com">Instagram</a></li></ul></div>
+    </div>
+    <div class="small"><span>© 2026 VAZIO Streetwear</span><span>Nomes, endereços e produtos são conteúdo de exemplo.</span></div>
+  </div>
+</footer>
+
+<div id="cartWrap">
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="dhead"><h2 class="st" id="cartTitle">Carrinho</h2><button class="x" id="closeCart" aria-label="Fechar carrinho">✕</button></div>
+    <div class="items" id="items"></div>
+    <div class="dfoot" id="dfoot"></div>
+  </aside>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
